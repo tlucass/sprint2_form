@@ -110,7 +110,7 @@ form.addEventListener('submit', function(event) {
 
     const inputPhone = phone.value.trim();
     if(inputPhone.length != 14 ){
-        alert('O número de celular deve conter o seguinte padrão: ()***-**.');
+        alert('O número de celular deve conter o seguinte padrão: (**)*****-****');
         return;
     }
 
