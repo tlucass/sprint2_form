@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,24 +11,26 @@
 
 </head>
 <body>
-    <form>
+    <form id="myForm">
         <label for="name">Nome:</label>
-        <input type="text">
+        <input type="text" id="name" class="inputs">
     
         <label for="email">Email:</label>
-        <input type="text">
+        <input type="text" id="email" class="inputs">
     
-        <label for="password">Senha:</label>
-        <input type="password">
+        <label for="password">Senha (Mín. 5 caracteres):</label>
+        <input type="password" name="password" class="inputs">
     
         <label for="phone">Celular:</label>
-        <input type="text">
+        <input type="text" id="phone">
+        <small>Informe um número de telefone válido ((**)*****-****).</small>
     
         <label for="age">Idade:</label>
-        <input type="text" inputmode="numeric" id="age">
+        <input type="text" inputmode="numeric" id="age" max="99">
+        <small>Você deve ter pelo menos 18 anos.</small>
     
         <label for="gender">Gênero:</label>
-        <select required>
+        <select id="gender" required>
           <option value="">Selecione</option>
           <option value="male">Masculino</option>
           <option value="female">Feminino</option>
