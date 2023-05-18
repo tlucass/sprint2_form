@@ -83,3 +83,56 @@ age.addEventListener("keyup", ()=>{
     }
   
 });
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    // Validação do nome
+    const inputName = names.value.trim();
+    if (inputName.length < 3) {
+        alert('O nome deve ter pelo menos 3 caracteres.');
+        return;
+    }
+
+    // Validação do email
+    const inputEmail = email.value.trim();
+    if (inputEmail.length < 5 || !inputEmail.includes("@")) {
+        alert('Informe um email válido.');
+        return;
+    }
+
+    // Validação da senha
+    const inputPassword = password.value.trim();
+    if (inputPassword.length < 5) {
+        alert('A senha deve ter pelo menos 5 caracteres.');
+        return;
+    }
+
+    const inputPhone = phone.value.trim();
+    if(inputPhone.length != 14 ){
+        alert('O número de celular deve conter o seguinte padrão: ()***-**.');
+        return;
+    }
+
+    // Validação da idade
+    if (age.value < 18) {
+        alert('Você deve ter pelo menos 18 anos.');
+        return;
+    }
+
+    const isNumber = /^\d+$/.test(age.value);
+    if(!isNumber){
+        alert('O campo idade aceita apenas números.');
+        return;
+    }
+
+    // Validação do gênero
+    if (gender === '') {
+        alert('Selecione um gênero');
+        return;
+    }
+
+    // Se todas as validações passaram, mostrar uma mensagem de sucesso
+    alert('Formulário enviado com sucesso!');
+    form.submit();
+});
