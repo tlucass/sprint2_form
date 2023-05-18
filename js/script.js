@@ -53,7 +53,7 @@ password.addEventListener("keyup", ()=>{
       labelPassword.setAttribute("style", "color:#049200");
     }
     
-  });
+});
   
 phone.addEventListener("keyup", ()=>{
   
@@ -68,4 +68,18 @@ if (inputPhone.length < 13 || !phoneRegex.test(inputPhone)) {
     labelPhone.setAttribute("style", "color:#049200");
 }
 
+});
+
+age.addEventListener("keyup", ()=>{
+
+    const isNumber = /^\d+$/.test(age.value);
+  
+    if(age.value < 18|| !isNumber){
+      age.setAttribute("style", "outline-color:#B00000");
+      labelAge.setAttribute("style", "color:#B00000");
+    }else{
+      age.setAttribute("style", "outline-color:#dddddd");
+      labelAge.setAttribute("style", "color:#049200");
+    }
+  
 });
