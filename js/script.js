@@ -27,10 +27,10 @@ names.addEventListener("keyup", ()=>{
       labelNames.setAttribute("style", "color:#049200");
     }
   
-  });
+});
   
   
-  email.addEventListener("keyup", ()=>{
+email.addEventListener("keyup", ()=>{
   
     if(email.value.length < 5 || !email.value.includes("@")){
       email.setAttribute("style", "outline-color:#B00000");
@@ -40,4 +40,32 @@ names.addEventListener("keyup", ()=>{
       labelEmail.setAttribute("style", "color:#049200");
     }
   
+});
+
+
+password.addEventListener("keyup", ()=>{
+  
+    if(password.value.length < 5){
+      password.setAttribute("style", "outline-color:#B00000");
+      labelPassword.setAttribute("style", "color:#B00000");
+    }else{
+      password.setAttribute("style", "outline-color:#dddddd");
+      labelPassword.setAttribute("style", "color:#049200");
+    }
+    
   });
+  
+phone.addEventListener("keyup", ()=>{
+  
+const inputPhone = phone.value.trim();
+const phoneRegex = /^\(\d{2}\)\d{5}-\d{4}$/; // Expressão regular para validar o formato (00)00000-0000
+
+if (inputPhone.length < 13 || !phoneRegex.test(inputPhone)) {
+    phone.setAttribute("style", "outline-color:#B00000");
+    labelPhone.setAttribute("style", "color:#B00000");
+} else {
+    phone.setAttribute("style", "outline-color:#dddddd");
+    labelPhone.setAttribute("style", "color:#049200");
+}
+
+});
